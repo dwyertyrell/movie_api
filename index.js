@@ -26,13 +26,13 @@ const s3Client = new S3Client({
     // forcePathStyle: true
 })
 
-const listObjectsParams = {
-    Bucket: process.env.S3_BUCKET_NAME || 'my-image-bucket-dwyertyrell'
-}
+// const listObjectsParams = {
+//     Bucket: process.env.S3_BUCKET_NAME || 'my-image-bucket-dwyertyrell'
+// }
 
-const listObjectsCmd = new ListObjectsV2Command(listObjectsParams)
+// const listObjectsCmd = new ListObjectsV2Command(listObjectsParams)
 
-s3Client.send(listObjectsCmd)
+// s3Client.send(listObjectsCmd)
 
 /**
  * Environment variables are set in Heroku Config Vars for production deployment
@@ -77,6 +77,7 @@ app.use(fileupload({
 let allowedOrigins = [
     'http://localhost:8080',
     'https://myflix-frontend-dwyertyrell.s3.eu-west-2.amazonaws.com',
+    'http://myflix-frontend-dwyertyrell.s3-website.eu-west-2.amazonaws.com',
     'http://localhost:1234',
     'https://voluble-elf-1a3488.netlify.app/',
     'https://secret-eyrie-53650-99dc45662f12.herokuapp.com'
